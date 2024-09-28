@@ -259,7 +259,7 @@ function MENU_SPEEDY_OEA() {
                      .::::::::::::::::-:          
                    :::::::::::::::::::::-.                  ¡Ándale, ándale, ándale yiiija! Rapidamente tu imagen configurada
                .::-::::::::::::::::::::::-.       
-            :-::::::::::::::::::::::::::::-                 Speedy OEA AutoInstall version: 1.4
+            :-::::::::::::::::::::::::::::-                 Speedy OEA AutoInstall version: 1.5
           :-::::::::::::::::::::::::::::::::      
         :-:::::::::::::::::::::::::::::::::-                Imagen Compatible: Openpli
        -::::::::::::::::::::::::::::::::::::-     
