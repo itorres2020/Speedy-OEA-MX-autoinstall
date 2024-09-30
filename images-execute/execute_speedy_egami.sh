@@ -721,7 +721,7 @@ function logo(){
 	echo -e "\e[32m${VERDE} *        																	 *\e[0m"
 	echo -e "\e[32m${VERDE} *                          SPEEDY OEA-Egami               					 *\e[0m"
 	echo -e "\e[32m${VERDE} *      grupo telegram: https://t.me/joinchat/AFo2KEfzM5Tk7y3VgcqIOA          *\e[0m"
-	echo -e "\e[32m${VERDE} *                            VERSION 1.4                                     *\e[0m"
+	echo -e "\e[32m${VERDE} *                            VERSION 1.5                                     *\e[0m"
 	echo -e "\e[32m${VERDE} *                           jungle-team.com                                  *\e[0m"
 	echo -e "\e[32m${VERDE} ******************************************************************************\e[0m"
 }
