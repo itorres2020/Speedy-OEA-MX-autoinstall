@@ -361,7 +361,7 @@ done
   - JungleScript -- Auto instalacion lista canales y picon
   - JungleBot -- Para controlar tu receptor por Telegram
   - Oscam-Conclave -- Auto instalacion oscam ultima version
-  - Oscam-Trunk -- Version oscam compilada por openatv
+  - Oscam-Stable -- Version oscam compilada por openatv
   - CCcam 2.3.2 64 bits spain -- Version estable para spain
   - Ncam -- Emuladora basada en Oscam
   - Ghostreamy - Panel gestion Stream Enigma2
@@ -741,7 +741,7 @@ function install_packages() {
  update
 #Se ejecuta instalacion de paquetes propios de openatv
  Modulo_package_gestion "$PAQUETE_EPGIMPORT" "🧐  Opciones Solicitud de instalacion EPGIMPORT" "$INSTALACION_NORMAL" "5"
- Modulo_package_gestion "enigma2-plugin-softcams-oscam-trunk-ipv4only" "🧐  Opciones Solicitud de instalacion Oscam Trunk" "$INSTALACION_FORZADA" "5"
+ Modulo_package_gestion "enigma2-plugin-softcams-oscam-stable-ipv4only" "🧐  Opciones Solicitud de instalacion Oscam Stable" "$INSTALACION_FORZADA" "5"
  Modulo_package_gestion "enigma2-plugin-softcams-oscam-icam" "🧐  Opciones Solicitud de instalacion Oscam Icam" "$INSTALACION_FORZADA" "5"
  Modulo_package_gestion "enigma2-plugin-softcams-ncam" "🧐  Opciones Solicitud de instalacion Ncam" "$INSTALACION_FORZADA" "5"
  Modulo_package_gestion "enigma2-plugin-softcams-cccam" "🧐  Opciones Solicitud de instalacion CCcam 2.3.2 64 bits spain" "$INSTALACION_FORZADA" "5" "extra_comando" "$COMANDO_CCCAM"
@@ -816,8 +816,8 @@ function remove() {
     if [ -n "$($ESTATUS_PAQUETE $PAQUETE_TDTCHANNLES)" ]; then
         echo "Desinstalando TdtChannels"; echo; $BORRAR_PAQUETE $PAQUETE_TDTCHANNLES >>$SPEEDY_LOG 2>&1 | progress_bar 5; echo "👍 TdtChannels Desinstalado"
     fi
-     if [ -n "$($ESTATUS_PAQUETE enigma2-plugin-softcams-oscam-trunk-ipv4only)" ]; then
-        echo "Desinstalando Oscam Trunk"; echo; $BORRAR_PAQUETE enigma2-plugin-softcams-oscam-trunk-ipv4only >>$SPEEDY_LOG 2>&1 | progress_bar 5; echo "👍 Oscam Trunk Desinstalado"
+     if [ -n "$($ESTATUS_PAQUETE enigma2-plugin-softcams-oscam-stable-ipv4only)" ]; then
+        echo "Desinstalando Oscam Stable"; echo; $BORRAR_PAQUETE enigma2-plugin-softcams-oscam-stable-ipv4only >>$SPEEDY_LOG 2>&1 | progress_bar 5; echo "👍 Oscam Stable Desinstalado"
     fi
     if [ -n "$($ESTATUS_PAQUETE enigma2-plugin-softcams-oscam-icam)" ]; then
         echo "Desinstalando Oscam icam"; echo; $BORRAR_PAQUETE enigma2-plugin-softcams-oscam-icam >>$SPEEDY_LOG 2>&1 | progress_bar 5; echo "👍 Oscam icam Desinstalado"
