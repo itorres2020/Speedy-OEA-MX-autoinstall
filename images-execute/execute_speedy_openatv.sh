@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ###################  Jungle-team   ######################
-#                  jungle-team.es  ######################
+#                  jungle-team.es  y tochtly2020        #
 #            speedy OEA Autoinstalacion OpenaTV         #
-#                    version 1.5                        #
+#                    version 1.5.1                        #
 ######################################################### 
 
 #Definimos paquetes mas usuales de archivos a instalar
@@ -20,7 +20,7 @@ PAQUETE_GHOSTREAMY="enigma2-plugin-extensions-ghostreamy"
 #Defnimos comandos extra instalacion
 COMANDO_FOOTONSAT="wget -q --no-check-certificate https://gitlab.com/MOHAMED_OS/dz_store/-/raw/main/FootOnsat/online-setup -O install.sh && sh install.sh && rm install.sh"
 COMANDO_CCCAM="suerte_cccam"
-COMANDO_JUNGLESCRIPT="wget -q '--no-check-certificate' https://raw.githubusercontent.com/jungla-team/Speedy-OEA-autoinstall/main/files_extra/op_junglescript.sh && sh op_junglescript.sh && rm op_junglescript.sh"
+COMANDO_JUNGLESCRIPT="wget -q '--no-check-certificate' https://raw.githubusercontent.com/itorres2020/Speedy-OEA-autoinstall/main/files_extra/op_junglescript.sh && sh op_junglescript.sh && rm op_junglescript.sh"
 COMANDO_JUNGLEBOT="cambiar_parametros_junglebot"
 
 #Definimos metodos instalacion
@@ -257,9 +257,9 @@ function MENU_SPEEDY_OEA() {
 	cat << "EOF"
                         .::::-----:::.            
                      .::::::::::::::::-:          
-                   :::::::::::::::::::::-.                  ¡Ándale, ándale, ándale yiiija! Rapidamente tu imagen configurada
+                   :::::::::::::::::::::-.                  ¡Ándale, ándale, ándale jiiija! Rapidamente tu imagen configurada
                .::-::::::::::::::::::::::-.       
-            :-::::::::::::::::::::::::::::-                 Speedy OEA AutoInstall version: 1.5
+            :-::::::::::::::::::::::::::::-                 Speedy OEA AutoInstall version: 1.5.1
           :-::::::::::::::::::::::::::::::::      
         :-:::::::::::::::::::::::::::::::::-                Imagen Compatible: OpenATV
        -::::::::::::::::::::::::::::::::::::-     
@@ -271,7 +271,7 @@ function MENU_SPEEDY_OEA() {
   :-:::::=+++++#@@@%#++=.==+++++++=::::::::::-    
    :=----+++++*+*###++++++*+++++++++-:----::::.             Licencia: General Public License
     .--::-+++++*+++++*%@*++++++++++++++++++-::-   
-      .:-:-++++++*%%@@@#++++++++++++-::...:=::::            Fecha Actualizacion: 28-09-2024
+      .:-:-++++++*%%@@@#++++++++++++-::...:=::::            Fecha Actualizacion: 29-04-2025 
          .:-=++++%@@@@*+++++++++++=-:.....:-::::-.
              :****###+++++++++++++=:....:-:::::::-
   ..       :*%%%%%##****+==+==--:--=----:::::::::.
@@ -289,7 +289,7 @@ function MENU_SPEEDY_OEA() {
                  =   +                            
     .::--========-. .=-::::::..                   
  :=++++++=-:..          .::-=++++=-.          .   
-:---:..                       ..:-=++.                                            @Jungle-Team 2019
+:---:..                       ..:-=++.                                            @Jungle-Team 2019 and menor touch tochtly2020
 EOF
 	echo -e "${GREEN} *********************************************************************************************************************************${RESET}"
 	echo
@@ -342,7 +342,7 @@ do
 		4) clear && borrar_log;;
 		5) clear && backup_jungle;;
 		6) clear && restaurar_backup;;
-		s) clear && echo "❤️  Gracias por haber usado Speedy OEA Autoinstalacion" && echo && exit;;
+		s) clear && echo "❤️  Gracias por haber usado Speedy OEA Autoinstalación para México" && echo && exit;;
 		*) echo && echo -e " ${RED_BOLD}¡¡¡¡¡¡¡$SpeedyOEA es un valor incorrecto, intentalo de nuevo!!!!!!${RESET}" && echo;
 	esac
 done
@@ -725,9 +725,9 @@ function logo(){
     echo -e "\e[32m${VERDE} * | |_| | |__| | |\  | |__| | |____| |____     | |  | |____ / ____ \| |  | | *\e[0m"
     echo -e "\e[32m${VERDE} * \____/ \____/|_| \_|\_____|______|______|    |_|  |______/_/    \_\_|  |_| *\e[0m"        
 	echo -e "\e[32m${VERDE} *        																	 *\e[0m"
-	echo -e "\e[32m${VERDE} *                          SPEEDY OEA-OpenATV            					 *\e[0m"
+	echo -e "\e[32m${VERDE} *                          SPEEDY OEA-OpenATV para México             	 *\e[0m"
 	echo -e "\e[32m${VERDE} *      grupo telegram: https://t.me/joinchat/AFo2KEfzM5Tk7y3VgcqIOA          *\e[0m"
-	echo -e "\e[32m${VERDE} *                            VERSION 1.5                                     *\e[0m"
+	echo -e "\e[32m${VERDE} *                            VERSION 1.5.1                                     *\e[0m"
 	echo -e "\e[32m${VERDE} *                           jungle-team.com                                  *\e[0m"
 	echo -e "\e[32m${VERDE} ******************************************************************************\e[0m"
 }
