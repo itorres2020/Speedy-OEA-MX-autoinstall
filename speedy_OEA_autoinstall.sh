@@ -60,7 +60,7 @@ echo "🔎 Buscando si la imagen instalada es compatible con la instalacion..."
 if [[ "$DISTRO" == "openatv" ]]; then
     echo -e "${YELLOW}👍 Se ha detectado que tienes instalado OpenATV, se procede a la ejecucion de la instalacion.${RESET}"
     $TIEMPO_ESPERA
-    wget -q '--no-check-certificate' https://raw.githubusercontent.com/itorres2020/Speedy-OEA-autoinstall/main/images-execute/execute_speedy_openatv.sh; bash execute_speedy_openatv.sh; rm -r execute_speedy_openatv.sh
+    wget -q '--no-check-certificate' https://github.com/itorres2020/Speedy-OEA-MX-autoinstall/blob/main/images-execute/execute_speedy_openatv.sh; bash execute_speedy_openatv.sh; rm -r execute_speedy_openatv.sh
 elif [[ "$DISTRO" == "egami" ]]; then
     echo -e "${YELLOW}👍 Se ha detectado que tienes instalado Egami, se procede a la ejecucion de la instalacion.${RESET}"
     $TIEMPO_ESPERA
