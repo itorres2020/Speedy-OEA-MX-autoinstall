@@ -32,6 +32,8 @@ options=(
     "Instalar Picon Version Color"
     "Instalar Picon Version Lunar"
     "Instalar Picon Version Color 3D"
+    "Instalar lista Canales EutelSat"
+    "Instalar Picon Version EutelSat"
 )
 
 # Acciones
@@ -56,6 +58,8 @@ function JUNGLESCRIPT {
                 8) tipopicon="movistar-color" ;;
                 9) tipopicon="movistar-lunar" ;;
                 10) tipopicon="movistar-color-3d" ;;
+                11) listacanales="eutelsat" ;;
+                12) tipopicon="eutelsat" ;;
             esac 
         fi
     done
