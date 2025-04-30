@@ -534,7 +534,7 @@ function hora() {
                 echo 
                 echo "Ajustando la hora en el receptor......."
                 echo
-                ntpdate 2.es.pool.ntp.org >> $SPEEDY_LOG 2>&1 | progress_bar 5
+                ntpdate mx.pool.ntp.org >> $SPEEDY_LOG 2>&1 | progress_bar 5
     			echo
    				echo -e "${BLUE_BOLD}⚠️  la hora actual de su receptor es:${RESET}${YELLOW_BOLD} $FECHA_RECEPTOR${RESET}"
     			echo
