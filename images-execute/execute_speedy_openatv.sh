@@ -735,16 +735,16 @@ function logo(){
 function install_packages() {
  CompruebaInternet
  Menu_start_install
- hora
+ #hora
  softcamfeed
  junglefeed
  update
 #Se ejecuta instalacion de paquetes propios de openatv
  Modulo_package_gestion "$PAQUETE_EPGIMPORT" "🧐  Opciones Solicitud de instalacion EPGIMPORT" "$INSTALACION_NORMAL" "5"
  Modulo_package_gestion "enigma2-plugin-softcams-oscam-stable-ipv4only" "🧐  Opciones Solicitud de instalacion Oscam Stable" "$INSTALACION_FORZADA" "5"
- Modulo_package_gestion "enigma2-plugin-softcams-oscam-icam" "🧐  Opciones Solicitud de instalacion Oscam Icam" "$INSTALACION_FORZADA" "5"
- Modulo_package_gestion "enigma2-plugin-softcams-ncam" "🧐  Opciones Solicitud de instalacion Ncam" "$INSTALACION_FORZADA" "5"
- Modulo_package_gestion "enigma2-plugin-softcams-cccam" "🧐  Opciones Solicitud de instalacion CCcam 2.3.2 64 bits spain" "$INSTALACION_FORZADA" "5" "extra_comando" "$COMANDO_CCCAM"
+# Modulo_package_gestion "enigma2-plugin-softcams-oscam-icam" "🧐  Opciones Solicitud de instalacion Oscam Icam" "$INSTALACION_FORZADA" "5"
+# Modulo_package_gestion "enigma2-plugin-softcams-ncam" "🧐  Opciones Solicitud de instalacion Ncam" "$INSTALACION_FORZADA" "5"
+# Modulo_package_gestion "enigma2-plugin-softcams-cccam" "🧐  Opciones Solicitud de instalacion CCcam 2.3.2 64 bits spain" "$INSTALACION_FORZADA" "5" "extra_comando" "$COMANDO_CCCAM"
  cambiar_arranque_emus
  Modulo_package_gestion "zerotier" "🧐  Opciones Solicitud de instalacion Zerotier" "$INSTALACION_FORZADA" "5"
  Modulo_package_gestion "tailscale" "🧐  Opciones Solicitud de instalacion Tailscale" "$INSTALACION_FORZADA" "5"
