@@ -746,43 +746,43 @@ function install_packages() {
 # Modulo_package_gestion "enigma2-plugin-softcams-ncam" "🧐  Opciones Solicitud de instalacion Ncam" "$INSTALACION_FORZADA" "5"
 # Modulo_package_gestion "enigma2-plugin-softcams-cccam" "🧐  Opciones Solicitud de instalacion CCcam 2.3.2 64 bits spain" "$INSTALACION_FORZADA" "5" "extra_comando" "$COMANDO_CCCAM"
  cambiar_arranque_emus
- Modulo_package_gestion "zerotier" "🧐  Opciones Solicitud de instalacion Zerotier" "$INSTALACION_FORZADA" "5"
- Modulo_package_gestion "tailscale" "🧐  Opciones Solicitud de instalacion Tailscale" "$INSTALACION_FORZADA" "5"
- Modulo_package_gestion "openvpn" "🧐  Opciones Solicitud de instalacion Openvpn" "$INSTALACION_NORMAL" "5"
- Modulo_package_gestion "enigma2-plugin-extensions-bouquetmakerxtream" "🧐  Opciones Solicitud de instalacion bouquetmakerxtream" "$INSTALACION_NORMAL" "5"
- Modulo_package_gestion "enigma2-plugin-extensions-jediepgxtream" "🧐  Opciones Solicitud de instalacion jediepgxtream" "$INSTALACION_NORMAL" "5"
- Modulo_package_gestion "enigma2-plugin-extensions-xklass" "🧐  Opciones Solicitud de instalacion xklass" "$INSTALACION_NORMAL" "5"
- Modulo_package_gestion "streamproxy" "🧐  Opciones Solicitud de instalacion streamproxy" "$INSTALACION_NORMAL" "5"
+# Modulo_package_gestion "zerotier" "🧐  Opciones Solicitud de instalacion Zerotier" "$INSTALACION_FORZADA" "5"
+# Modulo_package_gestion "tailscale" "🧐  Opciones Solicitud de instalacion Tailscale" "$INSTALACION_FORZADA" "5"
+# Modulo_package_gestion "openvpn" "🧐  Opciones Solicitud de instalacion Openvpn" "$INSTALACION_NORMAL" "5"
+# Modulo_package_gestion "enigma2-plugin-extensions-bouquetmakerxtream" "🧐  Opciones Solicitud de instalacion bouquetmakerxtream" "$INSTALACION_NORMAL" "5"
+# Modulo_package_gestion "enigma2-plugin-extensions-jediepgxtream" "🧐  Opciones Solicitud de instalacion jediepgxtream" "$INSTALACION_NORMAL" "5"
+# Modulo_package_gestion "enigma2-plugin-extensions-xklass" "🧐  Opciones Solicitud de instalacion xklass" "$INSTALACION_NORMAL" "5"
+# Modulo_package_gestion "streamproxy" "🧐  Opciones Solicitud de instalacion streamproxy" "$INSTALACION_NORMAL" "5"
 #Se ejecuta instalacion de paquetes de jungle-team
- Modulo_package_gestion "$PAQUETE_OSCAMCONCLAVE" "🧐  Opciones Solicitud de instalacion Oscam Conclave" "$INSTALACION_FORZADA" "10"
- if [ "$es_arm" -gt 0 ];
- then
-	 Modulo_package_gestion "$PAQUETE_GHOSTREAMY_ARM" "🧐  Opciones Solicitud de instalacion Ghostreamy" "$INSTALACION_FORZADA" "10"
- else
-     Modulo_package_gestion "$PAQUETE_GHOSTREAMY_MIPSEL" "🧐  Opciones Solicitud de instalacion Ghostreamy" "$INSTALACION_FORZADA" "10"
- fi
+ #Modulo_package_gestion "$PAQUETE_OSCAMCONCLAVE" "🧐  Opciones Solicitud de instalacion Oscam Conclave" "$INSTALACION_FORZADA" "10"
+ #if [ "$es_arm" -gt 0 ];
+ #then
+#	 Modulo_package_gestion "$PAQUETE_GHOSTREAMY_ARM" "🧐  Opciones Solicitud de instalacion Ghostreamy" "$INSTALACION_FORZADA" "10"
+ #else
+  #   Modulo_package_gestion "$PAQUETE_GHOSTREAMY_MIPSEL" "🧐  Opciones Solicitud de instalacion Ghostreamy" "$INSTALACION_FORZADA" "10"
+ #fi
  Modulo_package_gestion "$PAQUETE_JUNGLEBOT" "🧐  Opciones Solicitud de instalacion Junglebot" "$INSTALACION_FORZADA" "45" "extra_comando" "$COMANDO_JUNGLEBOT"
- Modulo_package_gestion "$PAQUETE_TDTCHANNLES" "🧐  Opciones Solicitud de instalacion TdtChannels" "$INSTALACION_NORMAL" "5"
- Modulo_package_gestion "enigma2-plugin-extensions-junglem3utobouquet" "🧐  Opciones Solicitud de instalacion junglem3utobouquet" "$INSTALACION_NORMAL" "5"
- Modulo_package_gestion "$PAQUETE_JUNGLESCRIPT" "🧐  Opciones Solicitud de instalacion JungleScript" "$INSTALACION_FORZADA" "10" "extra_comando" "$COMANDO_JUNGLESCRIPT"
- if [ "$es_arm" -gt 0 ];
- then
-     Modulo_package_gestion "enigma2-plugin-extensions-movistarepgdownload-arm" "🧐  Opciones Solicitud de instalacion movistarepgdownload" "$INSTALACION_NORMAL" "5"
- else
-     Modulo_package_gestion "enigma2-plugin-extensions-movistarepgdownload-mipsel" "🧐  Opciones Solicitud de instalacion movistarepgdownload-arm" "$INSTALACION_NORMAL" "5"
- fi
- if [ "$es_arm" -gt 0 ];
- then
-     Modulo_package_gestion "sendunicable" "🧐  Opciones Solicitud de instalacion sendunicable" "$INSTALACION_NORMAL" "5"
- else
-     echo -e "${BLUE_BOLD}⚠️  No disponible para receptores mipsel${RESET}"
- fi
- Modulo_package_gestion "enigma2-plugin-skins-op-artkoala" "🧐  Opciones Solicitud de instalacion skin OP-Artkoala" "$INSTALACION_FORZADA" "10"
- Modulo_package_gestion "enigma2-plugin-extensions-junglescripttool" "🧐  Opciones Solicitud de instalacion JungleScript Tools" "$INSTALACION_FORZADA" "5"
+ #Modulo_package_gestion "$PAQUETE_TDTCHANNLES" "🧐  Opciones Solicitud de instalacion TdtChannels" "$INSTALACION_NORMAL" "5"
+ #Modulo_package_gestion "enigma2-plugin-extensions-junglem3utobouquet" "🧐  Opciones Solicitud de instalacion junglem3utobouquet" "$INSTALACION_NORMAL" "5"
+ #Modulo_package_gestion "$PAQUETE_JUNGLESCRIPT" "🧐  Opciones Solicitud de instalacion JungleScript" "$INSTALACION_FORZADA" "10" "extra_comando" "$COMANDO_JUNGLESCRIPT"
+ #if [ "$es_arm" -gt 0 ];
+ #then
+ #    Modulo_package_gestion "enigma2-plugin-extensions-movistarepgdownload-arm" "🧐  Opciones Solicitud de instalacion movistarepgdownload" "$INSTALACION_NORMAL" "5"
+ #else
+ #    Modulo_package_gestion "enigma2-plugin-extensions-movistarepgdownload-mipsel" "🧐  Opciones Solicitud de instalacion movistarepgdownload-arm" "$INSTALACION_NORMAL" "5"
+ #fi
+ #if [ "$es_arm" -gt 0 ];
+ #then
+ #    Modulo_package_gestion "sendunicable" "🧐  Opciones Solicitud de instalacion sendunicable" "$INSTALACION_NORMAL" "5"
+ #else
+ #    echo -e "${BLUE_BOLD}⚠️  No disponible para receptores mipsel${RESET}"
+ #fi
+ #Modulo_package_gestion "enigma2-plugin-skins-op-artkoala" "🧐  Opciones Solicitud de instalacion skin OP-Artkoala" "$INSTALACION_FORZADA" "10"
+ #Modulo_package_gestion "enigma2-plugin-extensions-junglescripttool" "🧐  Opciones Solicitud de instalacion JungleScript Tools" "$INSTALACION_FORZADA" "5"
 #Instalaciones especiales
- Modulo_package_gestion "enigma2-plugin-extensions-footOnsat" "🧐  Opciones Solicitud de instalacion FootOnsat" "$INSTALACION_NORMAL" "5" "extra_comando" "$COMANDO_FOOTONSAT"
- Modulo_package_gestion "enigma2-plugin-extensions-bootlogojungle" "🧐  Opciones Solicitud de instalacion Bootlogo Speedy OEA" "$FORZAR_ESCRITURA" "5"
- cambiar_password 
+ #Modulo_package_gestion "enigma2-plugin-extensions-footOnsat" "🧐  Opciones Solicitud de instalacion FootOnsat" "$INSTALACION_NORMAL" "5" "extra_comando" "$COMANDO_FOOTONSAT"
+ #Modulo_package_gestion "enigma2-plugin-extensions-bootlogojungle" "🧐  Opciones Solicitud de instalacion Bootlogo Speedy OEA" "$FORZAR_ESCRITURA" "5"
+ #cambiar_password 
  init 3
  mensaje "Terminada la ejecucion de Speedy OEA Autoinstall, ahora se volvera al menu principal${GREEN}"
  mensaje "❤️  Gracias por haber usado el instalador Jungle-Team visite https://t.me/joinchat/AFo2KEfzM5Tk7y3VgcqIOA para soporte${RED}"
