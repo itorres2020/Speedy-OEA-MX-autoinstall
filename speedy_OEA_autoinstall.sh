@@ -18,7 +18,7 @@ PYTHON_MAJOR_VERSION=$(echo "$PYTHON_VERSION" | cut -d'.' -f1)
 TIEMPO_ESPERA="sleep 5"
 
 #Definimos bandera idioma script
-BANDERA_IDIOMA="mx"
+BANDERA_IDIOMA="es"
 
 #Definimos texto salida speedy
 TEXTO_SALIDA="se procede a cerrar la ejecucion de speedy OEA autoinstall"
