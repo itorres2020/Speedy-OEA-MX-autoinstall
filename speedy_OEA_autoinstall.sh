@@ -27,7 +27,7 @@ TEXTO_SALIDA="se procede a cerrar la ejecucion de speedy OEA autoinstall"
 clear
 echo -e "${GREEN}******************************************************************************${RESET}"
 echo -e "${GREEN}*                         Speedy OEA Autoinstall                              *${RESET}"
-echo -e "${GREEN}*      grupo telegram: https://t.me/joinchat/AFo2KEfzM5Tk7y3VqIOA             *${RESET}"
+echo -e "${GREEN}*      grupo telegram: https://t.me/joinchat/GrupoMexicoOEA                  *${RESET}"
 echo -e "${GREEN}*                            VERSION 1.5.1                                    *${RESET}"
 echo -e "${GREEN}*                     jungle-team.com and tochtly                             *${RESET}"
 echo -e "${GREEN}******************************************************************************${RESET}"
@@ -39,7 +39,7 @@ echo "$BANDERA_IDIOMA es el idioma usado en los mensajes salida del script"
 
 # Definimos comprobacion version python
 if [ "$PYTHON_MAJOR_VERSION" = "2" ]; then
-    echo -e "${RED}⛔️ Lo siento, Speedy OEA Autoinstall no es compatible con Python 2, $TEXTO_SALIDA.${RESET}"
+    echo -e "${RED}⛔️ Disculpa, Speedy OEA Autoinstall no es compatible con Python 2, $TEXTO_SALIDA.${RESET}"
     $TIEMPO_ESPERA
     exit 1
 fi
@@ -58,7 +58,7 @@ fi
 # Se chequea imagen instalada
 echo "🔎 Buscando si la imagen instalada es compatible con la instalacion..."
 if [[ "$DISTRO" == "openatv" ]]; then
-    echo -e "${YELLOW}👍 Se ha detectado que tienes instalado OpenATV, se procede a la ejecucion de la instalacion.${RESET}"
+    echo -e "${YELLOW}👍 Se detectó que tienes instalado OpenATV, se procederá con la instalación.${RESET}"
     $TIEMPO_ESPERA
     wget -q '--no-check-certificate' https://raw.githubusercontent.com/itorres2020/Speedy-OEA-MX-autoinstall/refs/heads/main/images-execute/execute_speedy_openatv.sh; bash execute_speedy_openatv.sh; rm -r execute_speedy_openatv.sh
 elif [[ "$DISTRO" == "egami" ]]; then

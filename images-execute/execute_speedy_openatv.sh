@@ -114,7 +114,7 @@ function temporizador()
 tiempo=15 # segundos
 
 echo
-echo -e "${RED_BOLD}⚠️   Si continua se procedera a la ejecucion, me joderia que lo hiciera por error" "${RESET}"
+echo -e "${RED_BOLD}⚠️   Si continúas, se procederá con la ejecución. Asegúrate de no hacerlo por error." "${RESET}"
 echo ""
 
 #Definimos una cuenta atras antes de la ejecucion
@@ -265,7 +265,7 @@ function MENU_SPEEDY_OEA() {
        -::::::::::::::::::::::::::::::::::::-     
      .-::::::::---::::::::::::::::::::::::::=:::            Web: www.jungle-team.es
     --:::::::-=+*#%%%#*+==-::::::::::::::::::=::  
-   --::::::--=+**#%%%%@@@@%*-::::::::::::::::=:             Telegram: https://t.me/joinchat/AFo2KEfzM5Tk7y3VgcqIOA 
+   --::::::--=+**#%%%%@@@@%*-::::::::::::::::=:             Telegram: https://t.me/joinchat/GrupoMexicoOEA
   =-::::::::--==+= +++++++**+=:::::::::::::::+    
   =-------==++++*-*+++++=:.=+++=-::::::::::::-              Donacion: https://www.paypal.com/paypalme/jungleteam
   :-:::::=+++++#@@@%#++=.==+++++++=::::::::::-    
@@ -477,7 +477,7 @@ function DEPENDENCIAS() {
 
 
 function cambiar_password() {
-    local confirmacion="💡  ¿OpenAtv no tiene contraseña por defecto. ¿Desea asignarle una? entonces introduzca si + intro o intro para cancelar"
+    local confirmacion="💡  OpenAtv no tiene contraseña por defecto. ¿Desea asignarle una? entonces introduzca si + intro o intro para cancelar"
     echo -e "${BLUE_BOLD}$confirmacion${RESET}"
     read respuesta
     respuesta=$(echo "$respuesta" | tr '[:upper:]' '[:lower:]')  # Convertir la respuesta a minúsculas
@@ -534,7 +534,7 @@ function hora() {
                 echo 
                 echo "Ajustando la hora en el receptor......."
                 echo
-                ntpdate mx.pool.ntp.org >> $SPEEDY_LOG 2>&1 | progress_bar 5
+                ntpdate mx.pool.ntp.org
     			echo
    				echo -e "${BLUE_BOLD}⚠️  la hora actual de su receptor es:${RESET}${YELLOW_BOLD} $FECHA_RECEPTOR${RESET}"
     			echo
@@ -726,7 +726,7 @@ function logo(){
     echo -e "\e[32m${VERDE} * \____/ \____/|_| \_|\_____|______|______|    |_|  |______/_/    \_\_|  |_| *\e[0m"        
 	echo -e "\e[32m${VERDE} *        																	 *\e[0m"
 	echo -e "\e[32m${VERDE} *                          SPEEDY OEA-OpenATV para México             	 *\e[0m"
-	echo -e "\e[32m${VERDE} *      grupo telegram: https://t.me/joinchat/AFo2KEfzM5Tk7y3VgcqIOA          *\e[0m"
+	echo -e "\e[32m${VERDE} *      grupo telegram: https://t.me/joinchat/GrupoMexicoOEA                  *\e[0m"
 	echo -e "\e[32m${VERDE} *                            VERSION 1.5.1                                     *\e[0m"
 	echo -e "\e[32m${VERDE} *                           jungle-team.com                                  *\e[0m"
 	echo -e "\e[32m${VERDE} ******************************************************************************\e[0m"

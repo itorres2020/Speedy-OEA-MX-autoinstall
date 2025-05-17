@@ -1,13 +1,13 @@
 #!/bin/bash
-# Menu opciones para junglescript
-# Realizado por Jungle-team
-# Version 3.0
+# Menú de opciones para junglescript
+# Adaptado para México
+# Versión 3.0
 #==============================================================================
 
 # Ruta al archivo de configuración
 CONFIG_FILE="/usr/bin/enigma2_pre_start.conf"
 
-#Definimos colores para mensajes
+# Definimos colores para mensajes
 GREEN="\e[32m"
 YELLOW="\e[33m"
 RED="\e[31m"
@@ -18,22 +18,16 @@ GREEN_BOLD="\e[1;32m"
 YELLOW_BOLD="\e[1;33m"
 BLUE_BOLD="\e[1;34m"
 
-
-# Opciones de configuracion de  junglescript
+# Opciones de configuración de junglescript
 options=(
-    "Activar lista Canales (marcar si deseas instalacion lista canales)"
-    "Instalar lista Canales Astra"
-    "Instalar lista Canales Astra-Hotbird"
-    "Instalar lista Canales Astra-Hispasat"
-    "Instalar lista Canales Astra-Hispasat-Hotbird"
-    "Instalar lista Canales Astra Comunitarias"
-    "Activar Picon (marcar si deseas instalacion picon)"
-    "Instalar Picon Version original"
-    "Instalar Picon Version Color"
-    "Instalar Picon Version Lunar"
-    "Instalar Picon Version Color 3D"
-    "Instalar lista Canales EutelSat"
-    "Instalar Picon Version EutelSat"
+    "Activar lista Canales (marcar si deseas instalación lista canales)"
+    "Instalar lista Canales Sky México"
+    "Instalar lista Canales Izzi"
+    "Instalar lista Canales Dish"
+    "Activar Picon (marcar si deseas instalación picon)"
+    "Instalar Picon Sky México"
+    "Instalar Picon Izzi"
+    "Instalar Picon Dish"
 )
 
 # Acciones
@@ -48,18 +42,13 @@ function JUNGLESCRIPT {
         if [[ ${choices[i]} ]]; then
             case $i in
                 0) lista=1 ;;
-                1) listacanales="astra" ;;
-                2) listacanales="astra-hotbird" ;;
-                3) listacanales="astra-hispasat" ;;
-                4) listacanales="astra-hotbird-hispasat" ;;
-                5) listacanales="astra-comunitaria" ;;
-                6) picon=1 ;;
-                7) tipopicon="movistar-original" ;;
-                8) tipopicon="movistar-color" ;;
-                9) tipopicon="movistar-lunar" ;;
-                10) tipopicon="movistar-color-3d" ;;
-                11) listacanales="eutelsat" ;;
-                12) tipopicon="eutelsat" ;;
+                1) listacanales="sky-mexico" ;;
+                2) listacanales="izzi" ;;
+                3) listacanales="dish" ;;
+                4) picon=1 ;;
+                5) tipopicon="sky-mexico" ;;
+                6) tipopicon="izzi" ;;
+                7) tipopicon="dish" ;;
             esac 
         fi
     done
@@ -79,14 +68,14 @@ clear
 
 # Función de menú
 function MENU {
-    echo -e "${BLUE_BOLD}OPCIONES DE CONFIGURACION DE JUNGLESCRIPT${RESET}"
+    echo -e "${BLUE_BOLD}OPCIONES DE CONFIGURACIÓN DE JUNGLESCRIPT${RESET}"
     echo
     echo -e "${YELLOW}-------------------------------------------------------------------------------------------------------------------------------------------"
     echo
-    echo  "-introduzca el valor numerico si es de un digito pulsar enter para confirmar"
-    echo  "-Si ha seleccionado erroneamente vuelve a introducir el mismo valor numerico para deseleccionar"
-    echo  "-Al finalizar la seleccion de las opciones pulsar enter para terminar"
-    echo  "-Si desea cambiar las opciones una vez terminado SPEEDY modifique el archivo /usr/bin/enigma2_pre_start.conf"
+    echo  "-Introduce el número de la opción y presiona Enter para confirmar."
+    echo  "-Si seleccionaste una opción por error, vuelve a introducir el mismo número para deseleccionarla."
+    echo  "-Al terminar, presiona Enter para finalizar."
+    echo  "-Si deseas cambiar las opciones una vez terminado SPEEDY, modifica el archivo /usr/bin/enigma2_pre_start.conf"
     echo
     echo -e "-------------------------------------------------------------------------------------------------------------------------------------------${RESET}"
     echo 
@@ -98,9 +87,9 @@ function MENU {
     for i in ${!options[@]}; do
         # Verificar si la opción está seleccionada
         if [[ ${choices[i]} ]]; then
-            echo -e "${amarillo}[$i] [👍] ${options[i]}${NC}"
+            echo -e "${YELLOW}[$i] [👍] ${options[i]}${RESET}"
         else
-            echo -e "${amarillo}[$i] [ ] ${options[i]}${NC}"
+            echo -e "${YELLOW}[$i] [ ] ${options[i]}${RESET}"
         fi
     done
 }
@@ -111,7 +100,6 @@ while true; do
     MENU
     echo
     read -p $'\033[1;32m'"Selecciona una opción: "$'\033[0m' opcion
-
 
     # Comprobar si la opción es válida
     if [[ $opcion =~ ^[0-9]+$ ]] && [ "$opcion" -ge 0 ] && [ "$opcion" -lt ${#options[@]} ]; then
