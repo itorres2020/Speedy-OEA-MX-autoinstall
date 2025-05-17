@@ -1,39 +1,39 @@
 #!/bin/bash
 #### "***********************************************"
-#### "*       ..:: Script by MOHAMED_OS ::..        *"
-#### "*  Support: https://github.com/MOHAMED19OS    *"
-#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "*       ..:: Script por Tochtly ::..           *"
+#### "*  Soporte: https://github.com/itorres2020     *"
+#### "*       E-Mail: contacto@tochtly.com           *"
 #### "***********************************************"
 
-#### Execute Script ####
+#### Ejecutar el script de instalación ####
 if [ -f /tmp/DzOSat/installOSCam.sh ]; then
     sh /tmp/DzOSat/installOSCam.sh
     sleep 3
 else
-    echo "Script Not Found !!"
+    echo "¡Script no encontrado!"
     exit 0
 fi
 
-#### Remove OSCam TMP folder ####
+#### Eliminar carpeta temporal de OSCam ####
 rm -r /tmp/DzOSat >/dev/null 2>&1
 
 echo ""
 echo ""
 echo "-------------------------------------------------------"
-echo "* Oscam Config & Softcam files in [/etc/tuxbox/config] *"
+echo "* Archivos de configuración y Softcam en [/etc/tuxbox/config] *"
 echo "-------------------------------------------------------"
 echo ""
 echo ""
 echo "*******************************************"
-echo "*             Install Finished            *"
+echo "*             Instalación finalizada      *"
 echo "*                                         *"
-echo "*         Need To Restart Enigma2         *"
+echo "*         Es necesario reiniciar Enigma2  *"
 echo "*                                         *"
-echo "*    Patched and compile By MOHAMED_OS    *"
+echo "*    Parcheado y compilado por Tochtly    *"
 echo "*                                         *"
 echo "*******************************************"
 
-#### Delete IPK File ####
+#### Eliminar archivo IPK ####
 for file in /tmp/enigma2-plugin-softcams-oscam*.ipk; do
     if [ -f "$file" ]; then
         rm -rf /tmp/enigma2-plugin-softcams-oscam*.ipk
@@ -41,7 +41,7 @@ for file in /tmp/enigma2-plugin-softcams-oscam*.ipk; do
     fi
 done
 
-#### Restart Image ####
+#### Reiniciar la imagen ####
 killall -9 enigma2
 
 exit 0

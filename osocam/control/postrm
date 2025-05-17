@@ -1,16 +1,16 @@
 #!/bin/bash
 #### "***********************************************"
-#### "*       ..:: Script by MOHAMED_OS ::..        *"
-#### "*  Support: https://github.com/MOHAMED19OS    *"
-#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "*       ..:: Script por Tochtly ::..           *"
+#### "*  Soporte: https://github.com/itorres2020     *"
+#### "*       E-Mail: contacto@tochtly.com           *"
 #### "***********************************************"
 FIN="=================================================="
 
-#### Binary & Package ####
+#### Binario y Paquete ####
 BIN="OSCam_11718-r798"
 arrVar=()
 
-#### Config ####
+#### Configuración ####
 echo ${FIN}
 [ "$1" != "upgrade" ] || exit 0
 
@@ -20,10 +20,10 @@ else
     STATUS='/var/lib/dpkg/status'
 fi
 
-#### Stop Binary ####
+#### Detener Binario ####
 if [ -f /etc/apt/apt.conf ]; then
     if ! [ "$(find /usr/bin | grep -Fic OSCam)" = 0 ]; then
-        echo "OE2.5/6 SoftCam Stop..."
+        echo "Deteniendo SoftCam para OE2.5/6..."
         if [ "$(systemctl list-units --type=service --state=running | grep -Fic OSCam | grep -v grep)" = 1 ]; then
             systemctl stop "$(systemctl list-units --type=service --state=running | grep -Fi OSCam | grep -v grep | awk '{print $1}')" >/dev/null 2>&1
         else
@@ -32,19 +32,19 @@ if [ -f /etc/apt/apt.conf ]; then
     fi
 else
     if ! [ "$(find /usr/bin | grep -Fic OSCam)" = 0 ]; then
-        echo "OE2.0 SoftCam Stop..."
+        echo "Deteniendo SoftCam para OE2.0..."
         killall -9 "$(find /usr/bin | grep -Fi OSCam | cut -d "/" -f4-)" >/dev/null 2>&1
     fi
 fi
 
-#### Check Package ####
+#### Verificar Paquete ####
 for file in enigma2-plugin-softcams-gosatplus-oscam enigma2-plugin-softcams-powercam-oscam enigma2-plugin-softcams-revcam-oscam enigma2-plugin-softcams-supcam-oscam; do
     if grep -qs "Package: $file" $STATUS; then
         arrVar+=("$file")
     fi
 done
 
-#### Delete Binar ####
+#### Eliminar Binario ####
 if [ ${#arrVar[@]} = 0 ]; then
     rm -rf /usr/camd/${BIN} >/dev/null 2>&1
     rm -rf /usr/emu/${BIN} >/dev/null 2>&1
@@ -55,7 +55,7 @@ if [ ${#arrVar[@]} = 0 ]; then
     rm -rf /var/bin/${BIN} >/dev/null 2>&1
 fi
 
-#### Delete Script ####
+#### Eliminar Scripts ####
 rm -rf /etc/enigma2/camd_${BIN}.json >/dev/null 2>&1
 rm -rf /lib/systemd/system/${BIN}.service >/dev/null 2>&1
 rm -rf /usr/camscript/Ncam_${BIN}.sh >/dev/null 2>&1
@@ -85,18 +85,18 @@ rm -rf /usr/camscript/${BIN}.sh >/dev/null 2>&1
 rm -rf /usr/script/${BIN}_cs.sh >/dev/null 2>&1
 rm -rf /usr/uninstall/${BIN}_remove.sh >/dev/null 2>&1
 
-#### Delete TMP emu log ####
+#### Eliminar Logs Temporales ####
 rm -rf /tmp/oscam.log >/dev/null 2>&1
 rm -rf /tmp/.oscam >/dev/null 2>&1
 rm -rf /tmp/ecm.info >/dev/null 2>&1
 
 echo
 echo "*******************************************"
-echo "*             Uninstall Finished          *"
+echo "*             Desinstalación finalizada   *"
 echo "*                                         *"
-echo "*         Need To Restart Enigma2         *"
+echo "*         Es necesario reiniciar Enigma2  *"
 echo "*                                         *"
-echo "*    Patched and compile By MOHAMED_OS    *"
+echo "*    Parcheado y compilado por Tochtly    *"
 echo "*******************************************"
 echo
 

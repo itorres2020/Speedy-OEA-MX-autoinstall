@@ -1,9 +1,9 @@
 Package: enigma2-plugin-softcams-oscam
 Version: 11718-emu-r798
-Description: OSCam to all images OE2.0 OE2.5/2.6 (Patched and Build by MOHAMED_OS)
+Description: OSCam para todas las imágenes OE2.0 OE2.5/2.6 (Patched and Build by MOHAMED_OS)
 Priority: optional
-Maintainer: MOHAMED_OS (mohamed19eng@gmail.com)
+Maintainer: itorres2020 (itorres2020@gmail.com)
 License: open
 Architecture: all
 Depends: libcurl4
-Source: https://github.com/MOHAMED19OS
+Source: https://github.com/itorres2020
