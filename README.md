@@ -1,4 +1,5 @@
-![logo speedy](https://jungle-team.com/wp-content/uploads/2023/03/speedy_logo.png)
+<img src="./banner.png" alt="logo speedy" style="width:50%;">
+
 [![Licencia speedy](https://jungle-team.com/wp-content/uploads/2023/03/licence.png)](https://github.com/itorres2020/Speedy-OEA-MX-autoinstall/blob/main/LICENSE) 
 [![Chat Telegram](https://jungle-team.com/wp-content/uploads/2023/03/telegram.png)](https://t.me/joinchat/GrupoMexicoOEA) 
 [![Donar a Jungle](https://jungle-team.com/wp-content/uploads/2023/03/donate.png)](https://paypal.me/jungleteam)
