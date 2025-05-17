@@ -1,0 +1,103 @@
+#!/bin/bash
+#### "***********************************************"
+#### "*       ..:: Script by MOHAMED_OS ::..        *"
+#### "*  Support: https://github.com/MOHAMED19OS    *"
+#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "***********************************************"
+FIN="=================================================="
+
+#### Binary & Package ####
+BIN="OSCam_11718-r798"
+arrVar=()
+
+#### Config ####
+echo ${FIN}
+[ "$1" != "upgrade" ] || exit 0
+
+if [ -f /etc/opkg/opkg.conf ]; then
+    STATUS='/var/lib/opkg/status'
+else
+    STATUS='/var/lib/dpkg/status'
+fi
+
+#### Stop Binary ####
+if [ -f /etc/apt/apt.conf ]; then
+    if ! [ "$(find /usr/bin | grep -Fic OSCam)" = 0 ]; then
+        echo "OE2.5/6 SoftCam Stop..."
+        if [ "$(systemctl list-units --type=service --state=running | grep -Fic OSCam | grep -v grep)" = 1 ]; then
+            systemctl stop "$(systemctl list-units --type=service --state=running | grep -Fi OSCam | grep -v grep | awk '{print $1}')" >/dev/null 2>&1
+        else
+            killall -9 "$(find /usr/bin | grep -Fi OSCam | cut -d "/" -f4-)" >/dev/null 2>&1
+        fi
+    fi
+else
+    if ! [ "$(find /usr/bin | grep -Fic OSCam)" = 0 ]; then
+        echo "OE2.0 SoftCam Stop..."
+        killall -9 "$(find /usr/bin | grep -Fi OSCam | cut -d "/" -f4-)" >/dev/null 2>&1
+    fi
+fi
+
+#### Check Package ####
+for file in enigma2-plugin-softcams-gosatplus-oscam enigma2-plugin-softcams-powercam-oscam enigma2-plugin-softcams-revcam-oscam enigma2-plugin-softcams-supcam-oscam; do
+    if grep -qs "Package: $file" $STATUS; then
+        arrVar+=("$file")
+    fi
+done
+
+#### Delete Binar ####
+if [ ${#arrVar[@]} = 0 ]; then
+    rm -rf /usr/camd/${BIN} >/dev/null 2>&1
+    rm -rf /usr/emu/${BIN} >/dev/null 2>&1
+    rm -rf /usr/bin/${BIN:?} >/dev/null 2>&1
+    rm -rf /usr/bin/cam/${BIN} >/dev/null 2>&1
+    rm -rf /usr/softcams/${BIN} >/dev/null 2>&1
+    rm -rf /var/emu/${BIN} >/dev/null 2>&1
+    rm -rf /var/bin/${BIN} >/dev/null 2>&1
+fi
+
+#### Delete Script ####
+rm -rf /etc/enigma2/camd_${BIN}.json >/dev/null 2>&1
+rm -rf /lib/systemd/system/${BIN}.service >/dev/null 2>&1
+rm -rf /usr/camscript/Ncam_${BIN}.sh >/dev/null 2>&1
+rm -rf /usr/script/${BIN}_cam.sh >/dev/null 2>&1
+rm -rf /usr/emu/${BIN}.sh >/dev/null 2>&1
+rm -rf /usr/script/${BIN}_em.sh >/dev/null 2>&1
+rm -rf /lib/systemd/system/emu-${BIN}.service >/dev/null 2>&1
+rm -rf /lib/systemd/system/emu-${BIN}.socket >/dev/null 2>&1
+rm -rf /usr/camscript/${BIN}_cam.sh >/dev/null 2>&1
+rm -rf /tmp/egami_e2_installer.sh >/dev/null 2>&1
+rm -rf /usr/emu_scripts/EGcam_${BIN}.sh >/dev/null 2>&1
+rm -rf /etc/init.d/softcam.${BIN} >/dev/null 2>&1
+rm -rf /usr/emu/start/${BIN}.emu >/dev/null 2>&1
+rm -rf /var/emuscript/${BIN}_em.sh >/dev/null 2>&1
+rm -rf /usr/LTCAM/CAM_${BIN}.sh >/dev/null 2>&1
+rm -rf /usr/script/cam/${BIN}.sh >/dev/null 2>&1
+rm -rf /usr/script/${BIN}.emu >/dev/null 2>&1
+rm -rf /usr/script/${BIN}.sh >/dev/null 2>&1
+rm -rf /etc/${BIN}.emu >/dev/null 2>&1
+rm -rf /etc/init.d/softcam.${BIN}.emu >/dev/null 2>&1
+rm -rf /etc/${BIN}_emu.emu >/dev/null 2>&1
+rm -rf /usr/uninstall/Remove_${BIN}.nab >/dev/null 2>&1
+rm -rf /usr/ppteam/${BIN}.pp >/dev/null 2>&1
+rm -rf /usr/camscript/${BIN}-emu.sh >/dev/null 2>&1
+rm -rf /etc/cam.d/${BIN}.sh >/dev/null 2>&1
+rm -rf /usr/camscript/${BIN}.sh >/dev/null 2>&1
+rm -rf /usr/script/${BIN}_cs.sh >/dev/null 2>&1
+rm -rf /usr/uninstall/${BIN}_remove.sh >/dev/null 2>&1
+
+#### Delete TMP emu log ####
+rm -rf /tmp/oscam.log >/dev/null 2>&1
+rm -rf /tmp/.oscam >/dev/null 2>&1
+rm -rf /tmp/ecm.info >/dev/null 2>&1
+
+echo
+echo "*******************************************"
+echo "*             Uninstall Finished          *"
+echo "*                                         *"
+echo "*         Need To Restart Enigma2         *"
+echo "*                                         *"
+echo "*    Patched and compile By MOHAMED_OS    *"
+echo "*******************************************"
+echo
+
+exit 0

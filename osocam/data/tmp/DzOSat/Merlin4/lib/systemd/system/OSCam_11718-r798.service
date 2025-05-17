@@ -1,0 +1,16 @@
+[Unit]
+Requires=dev-dvb-adapter0-ca0.device dev-dvb-adapter0-demux0.device dev-sci0.device
+After=dev-dvb-adapter0-ca0.device
+After=dev-dvb-adapter0-demux0.device
+After=dev-sci0.device
+
+[Service]
+Type=forking
+ExecStart=/bin/sh -c '/usr/bin/cam/OSCam_11718-r798 -b'
+ExecStartPost=/bin/sh -c 'if ! /bin/grep -Fxq "OSCam_11718-r798" /etc/clist.list ; then echo "OSCam_11718-r798" > /etc/clist.list ; fi'
+ExecStopPost=/bin/sh -c 'echo none > /etc/clist.list'
+NonBlocking=true
+NotifyAccess=main
+
+[Install]
+WantedBy=multi-user.target

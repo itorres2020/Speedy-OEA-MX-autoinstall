@@ -1,0 +1,48 @@
+#!/bin/sh
+#### "***********************************************"
+#### "*       ..:: Script by MOHAMED_OS ::..        *"
+#### "*  Support: https://github.com/MOHAMED19OS    *"
+#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "***********************************************"
+
+EMUNAME="OSCam_11718-r798"
+
+remove_tmp() {
+    rm -rf /tmp/*.info* /tmp/*.tmp* /tmp/*share* /tmp/*.pid* /tmp/*sbox* /tmp/oscam* /tmp/.oscam
+}
+
+case "$1" in
+start)
+    echo "[SCRIPT] $1: ${EMUNAME}"
+    if [ "$(pidof ${EMUNAME} | wc -l)" = 1 ]; then
+        echo "[0;31m ${EMUNAME} already running...[0m"
+    else
+        remove_tmp
+        /usr/bin/${EMUNAME} >/dev/null 2>&1 &
+    fi
+    ;;
+stop)
+    echo "[SCRIPT] $1: ${EMUNAME}"
+    if [ "$(pidof ${EMUNAME} | wc -l)" = 0 ]; then
+        echo "[0;31m ${EMUNAME} not running...[0m"
+    else
+        killall -9 ${EMUNAME}
+        sleep 2
+    fi
+    if [ "$(pidof ${EMUNAME} | wc -l)" = 1 ]; then
+        killall -9 ${EMUNAME}
+    fi
+    remove_tmp
+    ;;
+restart)
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+*)
+    echo "[0;32m Usage: $0 start|stop|restart[0m"
+    exit 1
+    ;;
+esac
+
+exit 0

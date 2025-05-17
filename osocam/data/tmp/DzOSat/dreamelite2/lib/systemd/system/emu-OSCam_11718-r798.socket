@@ -1,0 +1,8 @@
+[Unit]
+
+[Socket]
+ListenStream=/var/run/OSCam_11718-r798.pid
+Backlog=8
+
+[Install]
+WantedBy=sockets.target

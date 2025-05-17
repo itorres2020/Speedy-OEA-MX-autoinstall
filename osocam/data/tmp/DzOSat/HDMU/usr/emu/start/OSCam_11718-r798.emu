@@ -1,0 +1,9 @@
+name = OSCam_11718-r798
+start = /usr/emu/OSCam_11718-r798 &
+stop = killall -9 OSCam_11718-r798
+
+#### "***********************************************"
+#### "*       ..:: Script by MOHAMED_OS ::..        *"
+#### "*  Support: https://github.com/MOHAMED19OS    *"
+#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "***********************************************"

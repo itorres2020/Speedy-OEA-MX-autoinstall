@@ -1,0 +1,47 @@
+#!/bin/bash
+#### "***********************************************"
+#### "*       ..:: Script by MOHAMED_OS ::..        *"
+#### "*  Support: https://github.com/MOHAMED19OS    *"
+#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "***********************************************"
+
+#### Execute Script ####
+if [ -f /tmp/DzOSat/installOSCam.sh ]; then
+    sh /tmp/DzOSat/installOSCam.sh
+    sleep 3
+else
+    echo "Script Not Found !!"
+    exit 0
+fi
+
+#### Remove OSCam TMP folder ####
+rm -r /tmp/DzOSat >/dev/null 2>&1
+
+echo ""
+echo ""
+echo "-------------------------------------------------------"
+echo "* Oscam Config & Softcam files in [/etc/tuxbox/config] *"
+echo "-------------------------------------------------------"
+echo ""
+echo ""
+echo "*******************************************"
+echo "*             Install Finished            *"
+echo "*                                         *"
+echo "*         Need To Restart Enigma2         *"
+echo "*                                         *"
+echo "*    Patched and compile By MOHAMED_OS    *"
+echo "*                                         *"
+echo "*******************************************"
+
+#### Delete IPK File ####
+for file in /tmp/enigma2-plugin-softcams-oscam*.ipk; do
+    if [ -f "$file" ]; then
+        rm -rf /tmp/enigma2-plugin-softcams-oscam*.ipk
+        sleep 3
+    fi
+done
+
+#### Restart Image ####
+killall -9 enigma2
+
+exit 0

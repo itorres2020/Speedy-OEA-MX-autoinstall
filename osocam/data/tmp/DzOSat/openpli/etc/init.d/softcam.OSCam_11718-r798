@@ -1,0 +1,41 @@
+#!/bin/sh
+#### "***********************************************"
+#### "*       ..:: Script by MOHAMED_OS ::..        *"
+#### "*  Support: https://github.com/MOHAMED19OS    *"
+#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "***********************************************"
+
+CAMNAME="OSCam_11718-r798"
+
+remove_tmp() {
+	rm -rf /tmp/*.info* /tmp/*.tmp* /tmp/*share* /tmp/*.pid* /tmp/*sbox* /tmp/oscam* /tmp/.oscam
+}
+
+
+case "$1" in
+start)
+    ulimit 1024
+    remove_tmp
+    /usr/bin/${CAMNAME} --daemon --pidfile /tmp/cam.pid --restart 2 --utf8 &
+    ;;
+stop)
+    killall -9 ${CAMNAME} 2>/dev/null
+    remove_tmp
+    ;;
+restart | reload)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+version)
+    echo "${CAMNAME}"
+    ;;
+info)
+    echo "${CAMNAME}"
+    ;;
+*)
+    echo "Usage: $0 start|stop|restart"
+    exit 1
+    ;;
+esac
+exit 0

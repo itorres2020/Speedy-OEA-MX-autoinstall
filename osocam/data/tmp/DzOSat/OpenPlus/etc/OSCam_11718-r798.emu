@@ -1,0 +1,10 @@
+emuname = OSCam_11718-r798
+binname = OSCam_11718-r798
+startcam = /usr/bin/OSCam_11718-r798
+stopcam = killall -9 OSCam_11718-r798
+
+#### "***********************************************"
+#### "*       ..:: Script by MOHAMED_OS ::..        *"
+#### "*  Support: https://github.com/MOHAMED19OS    *"
+#### "*       E-Mail: mohamed19eng@gmail.com        *"
+#### "***********************************************"
